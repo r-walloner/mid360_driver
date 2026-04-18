@@ -1,6 +1,6 @@
 # Mid-360 Driver
 
-This is an implementation of the Mid-360 driver, intended to serve as a replacement for [livox_ros_driver2](https://github.com/Livox-SDK/livox_ros_driver2).
+This is a containerized verion of the Mid-360 driver, intended to serve as a replacement for [livox_ros_driver2](https://github.com/Livox-SDK/livox_ros_driver2).
 
 It has the following features:
 
@@ -18,10 +18,10 @@ Special note:
 
 <img src="./img/ACE.jpg" width="200px">
 
-## Install dependencies
-
-1. Please make sure you have install ROS2.
-2. Install Asio. If you are using ubuntu, you can install by following command: `sudo apt install libasio-dev`
+## Building the image
+```sh
+docker build -t mid360_driver .
+```
 
 ## Param
 
@@ -38,6 +38,8 @@ mid360_driver:
         host_ip: 192.168.1.50
         is_topic_name_with_lidar_ip: false # 是否在话题名后面加雷达ip，可以用于区分多个雷达
 ```
+
+A config file from the container host can be mounted under `/opt/ros_ws/install/mid360_driver/share/mid360_driver/config/param.yaml`
 
 ## Contact
 
